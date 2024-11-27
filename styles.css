@@ -5,10 +5,11 @@ body {
 
 .container {
     display: flex;
-    height: 100vh;
+    height: 100%;
     background-image: url('darkback.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 
 .sidebar {
