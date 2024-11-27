@@ -10,12 +10,6 @@ html, body {
     display: flex;
 }
 
-.container {
-    height: 100%;
-    background-image: none;
-    background-size: cover;
-    background-position: center;
-}
 
 .sidebar {
     width: 200px;
