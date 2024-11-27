@@ -7,10 +7,10 @@ html, body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    display: flex;
 }
 
 .container {
-    display: flex;
     height: 100%;
     background-image: none;
     background-size: cover;
