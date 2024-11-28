@@ -17,10 +17,34 @@
             <input type="text" id="username" name="username" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            <button type="submit" onclick="window.location.href='index.html'">Login</button>
+            <button type="submit">Login</button>
         </form>
+        <script>
+            const apiUrl = "https://sheetdb.io/api/v1/2minh4yvka9b5";
+    
+            document.getElementById("loginForm").addEventListener("submit", async (e) => {
+                e.preventDefault();
+                const username = document.getElementById("username").value;
+                const password = document.getElementById("password").value;
+    
+                try {
+                    const response = await fetch(`${apiUrl}/search?username=${username}`);
+                    const data = await response.json();
+    
+                    if (data.length > 0 && data[0].password === password) {
+                        alert("Login successful!");
+                        window.location.href = "index.html";
+
+                    } else {
+                        alert("Invalid username or password.");
+                    }
+                } catch (error) {
+                    console.error("Error:", error);
+                    alert("An error occurred. Please try again.");
+                }
+            });
+        </script>
         <div id="message" class="message"></div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
